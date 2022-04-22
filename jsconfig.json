@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/components/*": ["/src/components/*"],
+            "@/lib/*": ["/src/constants/*"],
+            "@/styles/*": ["/src/styles/*"],
+        }
+    },
+    "include": [
+        "**/*",
+        "./src/*.{js,ts,jsx,tsx}",
+        "./src/**/*.{js,ts,jsx,tsx}",
+        "./src/**/**/*.{js,ts,jsx,tsx}",
+        "./src/**/**/**/*.{js,ts,jsx,tsx}",
+        "./src/**/**/**/**/*.{js,ts,jsx,tsx}",
+    ],
+    "exclude": ["node_modules", "build", "public", ".next"]
+}
