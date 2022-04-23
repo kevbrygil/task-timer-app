@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { LabelAndInput } from '../Form'
 import Button from '../Button'
-import { postFormData } from '@/utils/postFormData'
+import { postFormData } from '../../utils/postFormData'
 
 const SignupForm: React.FC = () => {
     const [username, setUsername] = useState('')
