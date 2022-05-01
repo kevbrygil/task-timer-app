@@ -26,3 +26,7 @@ const Alert: React.FC<Props> = ({ children, type, key, extraClasses }) => {
 }
 
 export default Alert
+
+
+
+
