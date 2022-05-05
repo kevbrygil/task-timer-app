@@ -19,7 +19,7 @@ const Button: React.FC<Props> = ({ children, color, handleClick, type, extraClas
             colors = 'bg-yellow-300 hover:bg-yellow-400 text-black'
             break
         case 'secondary':
-            colors = 'bg-pink-500 hover:bg-pink-600'
+            colors = 'bg-gray-400 hover:bg-gray-500'
             break
         default:
             colors = 'bg-red-500 hover:bg-red-600'

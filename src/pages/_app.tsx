@@ -1,20 +1,23 @@
-import { useState } from 'react'
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Layout from '../components/layout/Layout'
 import { UserContext } from '../contexts/UserContext'
 import { useUser } from '../hooks/useUser'
+import { TasksContext } from '../contexts/TasksContext'
+import { useTasks } from '../hooks/useTasks'
 
-function MyApp({ Component, pageProps }: AppProps) {
+const TaskTimerApp = ({ Component, pageProps }: AppProps) => {
     const { username, setUsername } = useUser()
-
+    const { tasks, setTasks, getAndSetTasks } = useTasks(username)
     return (
         <UserContext.Provider value={{ username, setUsername }}>
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
+            <TasksContext.Provider value={{ tasks, setTasks, getAndSetTasks }}>
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </TasksContext.Provider>
         </UserContext.Provider>
     )
 }
 
-export default MyApp
+export default TaskTimerApp
