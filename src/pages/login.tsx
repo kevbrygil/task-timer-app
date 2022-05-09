@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import type { NextPage } from 'next'
 import { UserContext } from '../contexts/UserContext'
 import PageHeading from '../components/PageHeading'
-import LoginForm from '../components/forms/LoginForm'
+import LoginForm from '../components/general/LoginForm'
 
 const Login: NextPage = () => {
     const { username } = useContext(UserContext)

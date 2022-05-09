@@ -3,11 +3,11 @@ import type { NextPage } from 'next'
 import type { CurrentTaskTime } from '../interfaces/CurrentTaskTime'
 import { UserContext } from '../contexts/UserContext'
 import useTimer from '../hooks/useTimer'
-import Taskbar from '../components/forms/Taskbar'
-import { Timer } from '../components/forms/Timer'
+import Taskbar from '../components/general/Taskbar'
+import { Timer } from '../components/general/Timer'
 import Alert from '../components/Alert'
 import Link from '../components/Link'
-import LogCurrentTaskTimes from '../components/forms/LogCurrentTaskTimes'
+import LogCurrentTaskTimes from '../components/general/LogCurrentTaskTimes'
 
 const Home: NextPage = () => {
     const [selectedTaskId, setSelectedTaskId] = useState('')

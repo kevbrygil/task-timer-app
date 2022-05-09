@@ -53,7 +53,7 @@ export const Timer: React.FC<TimerProps> = ({
     const getTaskTimeFromId = (id: string) => {
         const task = tasks.find((task) => task.id === id)
         if (!task) return 0
-        return task.time_in_seconds
+        return task.seconds
     }
     const handleResetTimer = () => {
         pauseTimer()

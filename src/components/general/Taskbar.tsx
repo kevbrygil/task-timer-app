@@ -107,7 +107,7 @@ const TaskBar = ({
                         {tasks.length &&
                             tasks.map((task) => (
                                 <option key={task.id} value={task.id}>
-                                    {task.task_name}
+                                    {task.name}
                                 </option>
                             ))}
                     </select>

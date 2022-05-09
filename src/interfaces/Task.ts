@@ -1,8 +1,8 @@
 export interface Task {
-    __createdtime__: number
-    __updatedtime__: number
+    createdtime: number
+    updatedtime: number
     username: string
-    time_in_seconds: number
+    seconds: number
     id: string
-    task_name: string
+    name: string
 }

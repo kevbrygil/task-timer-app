@@ -11,6 +11,11 @@ const LoginForm = () => {
     const [error, setError] = useState('')
     const user = useContext(UserContext)
 
+    const authenticateUser = (username: string, accessToken: string) => {
+        user.setUsername(username)
+        localStorage.setItem('access_token', accessToken)
+    }
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setError('')
@@ -34,11 +39,6 @@ const LoginForm = () => {
             console.log(err)
             setError('Se presentó un problema externo, verifique su conexión')
         }
-    }
-
-    const authenticateUser = (username: string, accessToken: string) => {
-        user.setUsername(username)
-        localStorage.setItem('access_token', accessToken)
     }
 
     return (

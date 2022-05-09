@@ -43,13 +43,13 @@ const Stats: NextPage = () => {
             {errorMessage && <p className="text-center text-red-500 mb-8">{errorMessage}</p>}
 
             <div className="overflow-x-auto ">
-                <table className="table-auto border-collapse border border-slate-400 w-full sm:w-3/4 mx-auto">
+                <table className="table-auto border-collapse border border-slate-400 w-full sm:w-3/4 mx-auto mb-10">
                     <thead className="bg-slate-100 text-left">
                         <tr>
                             <TH>Tarea</TH>
                             <TH>Tiempo total</TH>
-                            <TH>Última actualización</TH>
                             <TH>Inicio</TH>
+                            <TH>Última actualización</TH>
                             <TH>Eliminar</TH>
                         </tr>
                     </thead>
@@ -57,10 +57,10 @@ const Stats: NextPage = () => {
                         {tasks.length > 0 &&
                             tasks.map((task) => (
                                 <tr key={task.id}>
-                                    <TD>{task.task_name}</TD>
-                                    <TD>{displayTimeString(task.time_in_seconds)}</TD>
-                                    <TD>{timestampToDayMonthYear(task.__updatedtime__)}</TD>
-                                    <TD>{timestampToDayMonthYear(task.__createdtime__)}</TD>
+                                    <TD>{task.name}</TD>
+                                    <TD>{displayTimeString(task.seconds)}</TD>
+                                    <TD>{timestampToDayMonthYear(task.createdtime)}</TD>
+                                    <TD>{timestampToDayMonthYear(task.updatedtime)}</TD>
                                     <TD>
                                         <button
                                             onClick={() => handleDeleteRow(task.id)}
