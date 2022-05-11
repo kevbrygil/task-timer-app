@@ -15,7 +15,12 @@ const SignupForm: React.FC = () => {
     const user = useContext(UserContext)
     const router = useRouter()
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const authenticateUser = (authUsername: string, accessToken: string): void => {
+        user.setUsername(authUsername)
+        localStorage.setItem('access_token', accessToken)
+    }
+
+    const handleSubmit = async (e: React.FormEvent): Promise<void> => {
         e.preventDefault()
         setErrors('')
         const formData = { username, password1, password2 }
@@ -25,9 +30,9 @@ const SignupForm: React.FC = () => {
             return
         } else {
             try {
-                const { response, result } = await harperFetchJWTTokens(username, password1)
-                const accessToken = result.operation_token
-                if (response.status === 200 && accessToken) {
+                const fetchData = await harperFetchJWTTokens(username, password1)
+                const accessToken = fetchData.result.operation_token
+                if (fetchData.response.status === 200 && accessToken) {
                     authenticateUser(username, accessToken)
                 } else {
                     router.push('/login')
@@ -39,22 +44,22 @@ const SignupForm: React.FC = () => {
         }
     }
 
-    const authenticateUser = (username: string, accessToken: string) => {
-        user.setUsername(username)
-        localStorage.setItem('access_token', accessToken)
-    }
-
-    const displayErrors = () => {
+    const displayErrors = (): JSX.Element => {
         if (errors.length === 0) return
 
-        return typeof errors === 'string' ? (
-            <Alert type="danger">{errors}</Alert>
-        ) : (
-            errors.map((err, i) => (
-                <Alert key={i} type="danger">
-                    {err}
-                </Alert>
-            ))
+        return (
+            <>
+                {typeof errors === 'string' ? (
+                    <Alert type="danger">{errors}</Alert>
+                ) : (
+                    errors.map((err, i) => (
+                        // eslint-disable-next-line react/no-array-index-key
+                        <Alert key={i} type="danger">
+                            {err}
+                        </Alert>
+                    ))
+                )}
+            </>
         )
     }
 

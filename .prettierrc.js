@@ -5,8 +5,11 @@ module.exports = {
     semi: false,
     trailingComma: 'es5',
     singleQuote: true,
-    printWidth: 100,
+    printWidth: 120,
     tabWidth: 4,
     useTabs: false,
     endOfLine: "auto",
+    arrowParens: 'always',
+    bracketSameLine: true,
+    bracketSpacing: true,
 };

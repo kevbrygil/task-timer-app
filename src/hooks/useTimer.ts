@@ -1,10 +1,11 @@
 import { useState, useRef } from 'react'
+import type { UseTimerData } from '../interfaces/UseTimerData'
 
-const useTimer = () => {
+const useTimer = (): UseTimerData => {
     const [isTimerOn, setIsTimerOn] = useState(false)
     const [seconds, setSeconds] = useState(0)
     const intervalRef = useRef<NodeJS.Timer | null>(null)
-    const startTimer = () => {
+    const startTimer = (): void => {
         setIsTimerOn(true)
 
         const intervalId = setInterval(() => {
@@ -13,7 +14,7 @@ const useTimer = () => {
 
         intervalRef.current = intervalId
     }
-    const pauseTimer = () => {
+    const pauseTimer = (): void => {
         setIsTimerOn(false)
         clearInterval(intervalRef.current as NodeJS.Timeout)
     }

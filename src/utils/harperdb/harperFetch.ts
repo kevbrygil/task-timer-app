@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { DB_URL } from '../../constants/constants'
+import type { HarperData } from '../../interfaces/HarperData'
 
-export const harperFetch = async (data: { [key: string]: any }) => {
+export const harperFetch = async (data: { [key: string]: any }): Promise<HarperData> => {
     const accessToken = localStorage.getItem('access_token')
     if (!accessToken) throw { error: 'Necesitas estar logueado' }
 

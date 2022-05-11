@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import handler from '../../middleware/_defaultHandler'
 import { harperCreateNewUser } from '../../utils/harperdb/createNewUser'
 
-const getFormErrors = (username: string, password1: string, password2: string) => {
+const getFormErrors = (username: string, password1: string, password2: string): string[] => {
     const errors: string[] = []
     if (!username || !password1 || !password2) {
         errors.push('Todos los campos son requeridos')

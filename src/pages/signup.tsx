@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import SignupForm from '../components/general/SignupForm'
+import SignupForm from '../components/signupPage/SignupForm'
 import PageHeading from '../components/PageHeading'
 import { useContext } from 'react'
 import { UserContext } from '../contexts/UserContext'

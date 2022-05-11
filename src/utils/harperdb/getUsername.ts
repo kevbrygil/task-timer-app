@@ -1,6 +1,6 @@
 import { DB_URL } from '../../constants/constants'
 
-export const harperGetUsername = async (accessToken: string) => {
+export const harperGetUsername = async (accessToken: string): Promise<string | null | void | undefined> => {
     const myHeaders = new Headers()
     myHeaders.append('Content-Type', 'application/json')
     myHeaders.append('Authorization', 'Bearer ' + accessToken)

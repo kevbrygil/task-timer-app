@@ -5,18 +5,18 @@ import Button from '../Button'
 import Alert from '../Alert'
 import { harperFetchJWTTokens } from '../../utils/harperdb/fetchJWTTokens'
 
-const LoginForm = () => {
+const LoginForm: React.FC = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     const user = useContext(UserContext)
 
-    const authenticateUser = (username: string, accessToken: string) => {
-        user.setUsername(username)
+    const authenticateUser = (authUsername: string, accessToken: string): void => {
+        user.setUsername(authUsername)
         localStorage.setItem('access_token', accessToken)
     }
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent): Promise<void | undefined> => {
         e.preventDefault()
         setError('')
         if (!username || !password) {

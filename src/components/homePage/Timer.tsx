@@ -30,7 +30,7 @@ export const Timer: React.FC<TimerProps> = ({
     const { tasks, getAndSetTasks } = useContext(TasksContext)
     const { username } = useContext(UserContext)
     const { formattedHours, formattedMins, formattedSecs } = formatTime(seconds)
-    const handleStartTimer = () => {
+    const handleStartTimer = (): void => {
         setErrorMessage('')
         if (selectedTaskId == '') {
             setErrorMessage('Por favor seleccione una tarea')
@@ -38,9 +38,18 @@ export const Timer: React.FC<TimerProps> = ({
             startTimer()
         }
     }
-    const handleLogTime = async () => {
+    const getTaskTimeById = (id: string): number => {
+        const taskTime = tasks.find((task) => task.id === id)
+        if (!taskTime) return 0
+        return taskTime.seconds
+    }
+    const handleResetTimer = (): void => {
         pauseTimer()
-        const prevTaskSeconds = getTaskTimeFromId(selectedTaskId)
+        setSeconds(0)
+    }
+    const handleLogTime = async (): Promise<void> => {
+        pauseTimer()
+        const prevTaskSeconds = getTaskTimeById(selectedTaskId)
         const newTaskSeconds = prevTaskSeconds + seconds
         const { response, result } = await harperSaveTaskTime(selectedTaskId, newTaskSeconds)
         if (response.status === 200) {
@@ -49,15 +58,6 @@ export const Timer: React.FC<TimerProps> = ({
             setCurrentTaskTimes((prev) => [{ name: selectedTaskName, seconds: seconds }, ...prev])
         } else setErrorMessage('Ocurrio un problema al guardar el tiempo')
         console.log({ response, result })
-    }
-    const getTaskTimeFromId = (id: string) => {
-        const task = tasks.find((task) => task.id === id)
-        if (!task) return 0
-        return task.seconds
-    }
-    const handleResetTimer = () => {
-        pauseTimer()
-        setSeconds(0)
     }
     return (
         <div>
@@ -78,15 +78,14 @@ export const Timer: React.FC<TimerProps> = ({
                 )}
                 {(seconds > 0 || isTimerOn) && (
                     <Button color="danger" handleClick={handleLogTime} extraClasses="ml-4">
-                        Registrar tiempo
+                        Acumular tiempo
                     </Button>
                 )}
             </div>
             {(seconds > 0 || isTimerOn) && (
                 <button
                     onClick={handleResetTimer}
-                    className="underline underline-offset-2 mt-8 cursor-pointer text-gray-500 mx-auto block"
-                >
+                    className="underline underline-offset-2 mt-8 cursor-pointer text-gray-500 mx-auto block">
                     Reiniciar
                 </button>
             )}
@@ -104,8 +103,7 @@ export const TimerBtn: React.FC<TimerBtnProps> = ({ handleClick, text, extraClas
             className={`${
                 text === 'Start' ? 'bg-blue-500' : 'bg-red-500'
             } rounded px-4 py-2 text-white mt-8 ${extraClasses}`}
-            onClick={handleClick}
-        >
+            onClick={handleClick}>
             {text}
         </button>
     )

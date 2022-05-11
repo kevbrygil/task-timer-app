@@ -6,7 +6,7 @@ import { useUser } from '../hooks/useUser'
 import { TasksContext } from '../contexts/TasksContext'
 import { useTasks } from '../hooks/useTasks'
 
-const TaskTimerApp = ({ Component, pageProps }: AppProps) => {
+const TaskTimerApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     const { username, setUsername } = useUser()
     const { tasks, setTasks, getAndSetTasks } = useTasks(username)
     return (

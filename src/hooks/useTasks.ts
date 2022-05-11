@@ -6,10 +6,10 @@ export const useTasks = (username: string) => {
     const [tasks, setTasks] = useState<Task[]>([])
 
     const getAndSetTasks = useCallback(
-        async (username: string) => {
+        async (callbackUsername: string) => {
             try {
-                const tasks: Task[] = await harperGetTasks(username)
-                setTasks(tasks)
+                const callbackTasks: Task[] = await harperGetTasks(callbackUsername)
+                setTasks(callbackTasks)
             } catch (err) {
                 console.log(err)
             }

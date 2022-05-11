@@ -5,7 +5,7 @@ interface Props {
     extraClasses?: string
 }
 const Alert: React.FC<Props> = ({ children, type, key, extraClasses }) => {
-    let color
+    let color: string
     switch (type) {
         case 'success':
             color = 'bg-blue-500'
@@ -26,7 +26,3 @@ const Alert: React.FC<Props> = ({ children, type, key, extraClasses }) => {
 }
 
 export default Alert
-
-
-
-
