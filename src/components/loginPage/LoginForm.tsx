@@ -42,7 +42,7 @@ const LoginForm: React.FC = () => {
     }
 
     return (
-        <form className="w-full sm:w-96" onSubmit={handleSubmit}>
+        <form className="w-full sm:w-96 px-4 sm:px-0" onSubmit={handleSubmit}>
             <LabelAndInput
                 label="Nombre de usuario"
                 inputType="text"
@@ -57,7 +57,7 @@ const LoginForm: React.FC = () => {
                 handleChange={(e) => setPassword(e.target.value)}
                 value={password}
             />
-            <Button color="success" extraClasses="w-full mt-3 py-3 font-semibold">
+            <Button color="success" extraClasses="w-full mt-3 py-3 px-4 sm:px-0 font-semibold">
                 Iniciar sesión
             </Button>
 
