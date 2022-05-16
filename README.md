@@ -1,6 +1,6 @@
 # README
 
-Este README da una breve explicación de la evaluación asi como la puesta en marcha de la aplicación.
+Este README describe el proyecto, asi como la puesta en marcha de la aplicación.
 
 # Repositorio de evaluación
 
