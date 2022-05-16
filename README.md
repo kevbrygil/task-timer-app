@@ -81,17 +81,17 @@ Desde aqui puedes accedes a registrarse o a iniciar sesión
 
 Aqui puedes registrarse nuevos usuarios, esto se almacena en la base de datos y por consiguiente inicia sesión automaticamente.
 
-![Registro](./public/pantalla_registro.png)
+<img src="./public/pantalla_registro.png" width="300">
 
 #### Pantalla de login
 
 El sistema de autentificación que se implemento es "stateless" - Esto se significa que no se almacenará en la base de datos o en el servidor, que nos indique quién está conectado o no. Solamente almacena en el cliente un JWT de acceso para autentificar a los usuarios.
 
-![Login](./public/pantalla_login.png)
+<img src="./public/pantalla_login.png" width="300">
 
 #### Pantalla de logueado
 
-![Logueado](./public/pantalla_logueado.png)
+<img src="./public/pantalla_logueado.png" width="300">
 
 #### Pantalla con el temporizador
 
@@ -105,7 +105,7 @@ Basta indicar los siguientes puntos para esta pantalla:
 -   Cuando le das al boton de "Acumular tiempo" a la tarea, este hace una suma al tiempo que tenias anteriormente
 -   Solamente las tareas con estado "Activo" puedes sumar tiempo
 
-![Temporizador](./public/pantalla_tiempo.png)
+<img src="./public/pantalla_tiempo.png" width="300">
 
 #### Pantalla de estadisticas
 
@@ -122,7 +122,7 @@ Tambien consta de una tabla con el histórico de las tareas con las siguientes c
 -   Puedes Eliminar una tarea
 -   Puedes Finalizar una tarea
 
-![Temporizador](./public/estadisticas_mobile.png)
+<img src="./public/estadisticas_mobile.png" width="300">
 
 ![Temporizador](./public/estadisticas_desk1.png)
 
