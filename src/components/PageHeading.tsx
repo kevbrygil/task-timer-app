@@ -4,7 +4,7 @@ interface Props {
 }
 
 const PageHeading: React.FC<Props> = ({ children, extraClasses }) => {
-    const classes = 'text-4xl text-green-900 font-semibold ' + extraClasses
+    const classes = 'text-4xl text-sky-600 font-semibold ' + extraClasses
 
     return <h1 className={classes}>{children}</h1>
 }

@@ -1,10 +1,13 @@
 import '../styles/globals.css'
+import 'antd/dist/antd.less'
 import type { AppProps } from 'next/app'
 import Layout from '../components/layout/Layout'
 import { UserContext } from '../contexts/UserContext'
 import { useUser } from '../hooks/useUser'
 import { TasksContext } from '../contexts/TasksContext'
 import { useTasks } from '../hooks/useTasks'
+import { ConfigProvider } from 'antd'
+import esES from 'antd/lib/locale/es_ES'
 
 const TaskTimerApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     const { username, setUsername } = useUser()
@@ -12,9 +15,11 @@ const TaskTimerApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     return (
         <UserContext.Provider value={{ username, setUsername }}>
             <TasksContext.Provider value={{ tasks, setTasks, getAndSetTasks }}>
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
+                <ConfigProvider locale={esES}>
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
+                </ConfigProvider>
             </TasksContext.Provider>
         </UserContext.Provider>
     )

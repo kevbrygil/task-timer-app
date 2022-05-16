@@ -13,7 +13,7 @@ const LogCurrentTaskTimes: React.FC<Props> = ({ currentTaskTimes }) => {
                     <p>
                         <span className="text-green-600">{t.seconds}</span> segundo
                         {t.seconds > 1 ? 's' : null} agregado{t.seconds > 1 ? 's' : null} a
-                        <span className="text-green-600">{t.name}</span>
+                        <span className="text-green-600 ml-1">{t.name}</span>
                     </p>
                 </div>
             ))}

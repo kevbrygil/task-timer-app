@@ -4,7 +4,7 @@ import React, { useContext, useState } from 'react'
 import { UserContext } from '../../contexts/UserContext'
 import { TasksContext } from '../../contexts/TasksContext'
 import type { NavbarLink } from '../../interfaces/NavbarLink'
-import { MenuIcon } from '@heroicons/react/solid'
+import { MenuOutlined } from '@ant-design/icons'
 
 const NavLink: React.FC<NavbarLink> = ({ href, children }) => {
     return (
@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
                             block lg:hidden outline-none focus:outline-none"
                             type="button"
                             onClick={() => setNavbarOpen(!navbarOpen)}>
-                            <MenuIcon className="h-5 w-5" />
+                            <MenuOutlined />
                         </button>
                     </div>
                     <div

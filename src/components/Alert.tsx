@@ -4,6 +4,7 @@ interface Props {
     key?: number
     extraClasses?: string
 }
+
 const Alert: React.FC<Props> = ({ children, type, key, extraClasses }) => {
     let color: string
     switch (type) {

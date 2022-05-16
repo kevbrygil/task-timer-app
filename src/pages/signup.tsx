@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Head from '../components/Head'
 import SignupForm from '../components/signupPage/SignupForm'
 import PageHeading from '../components/PageHeading'
 import { useContext } from 'react'
@@ -9,16 +10,21 @@ const Signup: NextPage = () => {
     const { username } = useContext(UserContext)
 
     return (
-        <div className="mx-auto my-20">
-            {username ? (
-                <Alert type="success">Tu estás logueado como {username}</Alert>
-            ) : (
-                <>
-                    <PageHeading extraClasses="text-center mb-8">Crea una cuenta</PageHeading>
-                    <SignupForm />
-                </>
-            )}
-        </div>
+        <>
+            <Head>
+                <title>Registro</title>
+            </Head>
+            <div className="mx-auto my-20">
+                {username ? (
+                    <Alert type="success">Tu estás logueado como {username}</Alert>
+                ) : (
+                    <>
+                        <PageHeading extraClasses="text-center mb-8">Crea una cuenta</PageHeading>
+                        <SignupForm />
+                    </>
+                )}
+            </div>
+        </>
     )
 }
 

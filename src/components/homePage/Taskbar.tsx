@@ -101,11 +101,14 @@ const TaskBar: React.FC<Props> = ({
                                 </option>
                             )}
                             {tasks.length &&
-                                tasks.map((task) => (
-                                    <option key={task.id} value={task.id}>
-                                        {task.name}
-                                    </option>
-                                ))}
+                                tasks.map(
+                                    (task) =>
+                                        task.status === 'Activo' && (
+                                            <option key={task.id} value={task.id}>
+                                                {task.name}
+                                            </option>
+                                        )
+                                )}
                         </select>
                         <Button handleClick={() => setIsUserAddingNewTask(true)} color="primary">
                             Nueva tarea
