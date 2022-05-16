@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { useState, useCallback, useEffect } from 'react'
 import type { Task } from '../interfaces/Task'
 import { harperGetTasks } from '../utils/harperdb/getTasks'

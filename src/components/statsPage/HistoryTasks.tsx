@@ -3,6 +3,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useContext, useState } from 'react'
 import { TasksContext } from '../../contexts/TasksContext'
+import { TasksMonthContext } from '../../contexts/TasksMonthContext'
+import { ChartMonthContext } from '../../contexts/ChartMonthContext'
 import { Table, Tag, Space, Tooltip, Input, InputNumber, Popconfirm, Form, Typography } from 'antd'
 import type { Task } from '../../interfaces/Task'
 import { displayTimeString, timestampToDayMonthYear } from '../../utils/formatTime'
@@ -23,6 +25,8 @@ interface EditableCellProps extends React.HTMLAttributes<HTMLElement> {
 
 const HistoryTasks: React.FC = () => {
     const { tasks, getAndSetTasks } = useContext(TasksContext)
+    const { getAndSetTasksMonth } = useContext(TasksMonthContext)
+    const { getAndSetChartMonth } = useContext(ChartMonthContext)
     const [errorMessage, setErrorMessage] = useState('')
 
     const handleDeleteRow = async (username: string, taskId: string): Promise<void> => {
@@ -34,6 +38,8 @@ const HistoryTasks: React.FC = () => {
             const { response } = await harperDeleteTask(taskId)
             if (response.status === 200) {
                 getAndSetTasks(username)
+                getAndSetTasksMonth(username)
+                getAndSetChartMonth(username)
                 return
             }
         } catch (err) {
@@ -51,6 +57,8 @@ const HistoryTasks: React.FC = () => {
             const { response } = await harperFinishTask(taskId)
             if (response.status === 200) {
                 getAndSetTasks(username)
+                getAndSetTasksMonth(username)
+                getAndSetChartMonth(username)
                 return
             }
         } catch (err) {
@@ -116,8 +124,11 @@ const HistoryTasks: React.FC = () => {
                 setErrorMessage('')
                 const item = newData[index]
                 const { response } = await harperEditTask(item.id, row.name)
-                if (response.status === 200) getAndSetTasks(item.username)
-                else setErrorMessage('Ocurrio un problema al finalizar la tarea')
+                if (response.status === 200) {
+                    getAndSetTasks(item.username)
+                    getAndSetTasksMonth(item.username)
+                    getAndSetChartMonth(item.username)
+                } else setErrorMessage('Ocurrio un problema al finalizar la tarea')
             }
             setEditingKey('')
         } catch (errInfo) {

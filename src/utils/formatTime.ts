@@ -57,3 +57,10 @@ export const timestampToDayMonthYear = (timestamp: number): string => {
     const formattedDate = date.toLocaleDateString()
     return formattedDate
 }
+
+export const MonthNumbertoMonthName = (monthNumber: number): string => {
+    const date = new Date()
+    date.setMonth(monthNumber - 1)
+    const monthName = date.toLocaleString([], { month: 'long' })
+    return monthName.charAt(0).toUpperCase() + monthName.slice(1)
+}

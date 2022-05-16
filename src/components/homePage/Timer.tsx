@@ -1,6 +1,8 @@
 import { useContext } from 'react'
 import { TasksContext } from '../../contexts/TasksContext'
 import { UserContext } from '../../contexts/UserContext'
+import { TasksMonthContext } from '../../contexts/TasksMonthContext'
+import { ChartMonthContext } from '../../contexts/ChartMonthContext'
 import { formatTime } from '../../utils/formatTime'
 import { harperSaveTaskTime } from '../../utils/harperdb/saveTaskTime'
 import Button from '../Button'
@@ -28,6 +30,8 @@ export const Timer: React.FC<TimerProps> = ({
     setCurrentTaskTimes,
 }) => {
     const { tasks, getAndSetTasks } = useContext(TasksContext)
+    const { getAndSetTasksMonth } = useContext(TasksMonthContext)
+    const { getAndSetChartMonth } = useContext(ChartMonthContext)
     const { username } = useContext(UserContext)
     const { formattedHours, formattedMins, formattedSecs } = formatTime(seconds)
     const handleStartTimer = (): void => {
@@ -54,6 +58,8 @@ export const Timer: React.FC<TimerProps> = ({
         const { response, result } = await harperSaveTaskTime(selectedTaskId, newTaskSeconds)
         if (response.status === 200) {
             getAndSetTasks(username)
+            getAndSetTasksMonth(username)
+            getAndSetChartMonth(username)
             setSeconds(0)
             setCurrentTaskTimes((prev) => [{ name: selectedTaskName, seconds: seconds }, ...prev])
         } else setErrorMessage('Ocurrio un problema al guardar el tiempo')
