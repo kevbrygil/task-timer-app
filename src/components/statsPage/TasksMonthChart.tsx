@@ -14,25 +14,29 @@ const TaskMonthChart: React.FC = () => {
             {
                 data: tasksMonth.map((item: Task) => Math.trunc(item.seconds / 60)),
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
+                    '#7cb5ec',
+                    '#434348',
+                    '#90ed7d',
+                    '#f7a35c',
+                    '#8085e9',
+                    '#f15c80',
+                    '#e4d354',
+                    '#2b908f',
+                    '#f45b5b',
+                    '#91e8e1',
                 ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                ],
+                borderColor: ['#fff'],
                 borderWidth: 1,
             },
         ],
     }
-    return <Pie data={data} />
+    return (
+        <div className="sm:flex sm:justify-center">
+            <div className="sm:relative sm:h-96 sm:w-96">
+                <Pie data={data} />
+            </div>
+        </div>
+    )
 }
 
 export default TaskMonthChart
