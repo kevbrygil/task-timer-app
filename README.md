@@ -31,6 +31,7 @@ Este repositorio fue hecho con la finalidad de ayudar en el proceso de evaluaci�
 ### Requisitos
 
 **Nodejs**: Se prob처 con la versi처n 16.14.0 y 18.1.0, sino cuenta con alguno, se sugiere usar NVM para usar multiples versiones.
+
 **NPM**: Se prob처 con la versi처n 8.6.0 y 8.8.0
 
 ### Instalaci처n
