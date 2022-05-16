@@ -17,7 +17,7 @@ Este repositorio fue hecho con la finalidad de ayudar en el proceso de evaluaci�
 
 **Tailwind**: Nos ofrece un repositorio repleto de clases CSS, que por consiguiente nos permite diseñar componentes web personalizados. Por estas ventajas se descritas se incluyó en el proyecto.
 
-**Ant Design**: Es un lenguaje de diseño de interfaces y contiene una biblioteca React UI muy amplia.
+**Ant Design**: Es un lenguaje de diseño de interfaz, contiene una biblioteca React UI muy amplia.
 
 **lint**: Es una herramienta de programación, que nos permite detectar código malicioso, confuso e incompatible entre distintas arquitecturas. Más explicitamente nos permite detectar errores de programación que solemos producir.
 

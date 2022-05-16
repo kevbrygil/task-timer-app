@@ -78,12 +78,12 @@ const TaskBar: React.FC<Props> = ({
                             placeholder="Ingrese la tarea aquí..."
                             value={taskInputValue}
                             onChange={handleChangeTaskInput}
-                            className="border p-2 mr-2"
+                            className="border p-2 ml-4 mr-2 sm:ml-0"
                         />
                         <Button color="primary" handleClick={handleClickAddNewTask}>
-                            Agregar tarea
+                            Agregar
                         </Button>
-                        <Button color="secondary" handleClick={() => setIsUserAddingNewTask(false)} extraClasses="ml-1">
+                        <Button color="secondary" extraClasses="ml-1" handleClick={() => setIsUserAddingNewTask(false)}>
                             Cancelar
                         </Button>
                     </>

@@ -24,7 +24,7 @@ const Button: React.FC<Props> = ({ children, color, handleClick, type, extraClas
         default:
             colors = 'bg-red-500 hover:bg-red-600'
     }
-    const classes = `rounded text-white py-2 px-4 ${colors} ${extraClasses}`
+    const classes = `rounded text-white py-2 px-2 ${colors} ${extraClasses}`
 
     return (
         <button className={classes} onClick={handleClick} type={type}>
