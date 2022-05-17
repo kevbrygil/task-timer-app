@@ -68,6 +68,7 @@ http://localhost:3000/
 ```
 
 6.- Iniciar sesión o registrarse
+
 Puedes iniciar sesión con el usuario por defecto(Proporcionado por el administrador), este usuario contiene información, por lo que serviría para probar.
 
 ### Explicación de la interfaz
