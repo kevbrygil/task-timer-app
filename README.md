@@ -90,6 +90,14 @@ El sistema de autentificación que se implemento es "stateless" - Esto se signif
 
 <img src="./public/pantalla_login.png" width="300">
 
+Con HarperDB podemos crear un token basado en JWT para cada usuario en la base de datos, esto es una ventaja porque no tenemos que instalar ningun paquete y manejar la lógica de autentificación por medio del JWT. Para esta aplicación HarperDB nos devuelve un token y lo almacenamos en localstorage, HarperDB verifica automaticamente si el token es válido, si es asi, se seguirá adelante con la solicitud.
+
+En las siguientes imagenes nos muestran la tabla de task(donde se guardan las tareas) y la tabla de usuarios, cabe mencionar que el usuario contiene roles, pensado de que puedan entrar diferentes roles para la aplicación.
+
+<img src="./public/tabla_task.png" width="600">
+
+<img src="./public/harperdb_usuarios.png" width="600">
+
 #### Pantalla de logueado
 
 <img src="./public/pantalla_logueado.png" width="300">
