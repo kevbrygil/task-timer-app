@@ -15,7 +15,7 @@ Este repositorio fue hecho con la finalidad de ayudar en el proceso de evaluaci�
 
 **Typescript**: Nos brinda a nuestro proyecto un mejor orden en cuestion de tipado y detectar rapidamente errores en nuestro editor.
 
-**Tailwind**: Nos ofrece un repositorio repleto de clases CSS, que por consiguiente nos permite diseñar componentes web personalizados. Por estas ventajas se descritas se incluyó en el proyecto.
+**Tailwind**: Nos ofrece un repositorio repleto de clases CSS, que por consiguiente nos permite diseñar componentes web personalizados. Por estas ventajas descritas es que se incluyó en el proyecto.
 
 **Ant Design**: Es un lenguaje de diseño de interfaz, contiene una biblioteca React UI muy amplia.
 
