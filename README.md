@@ -46,7 +46,7 @@ git clone https://github.com/kevbrygil/task-timer-app.git
 
 ```
 cd task-timer-app/
-git clone https://github.com/kevbrygil/task-timer-app.git
+npm install
 ```
 
 3.- Cree un archivo .env en la raiz del proyecto y dentro de ella agregar la llave proporcionado por el administrador
